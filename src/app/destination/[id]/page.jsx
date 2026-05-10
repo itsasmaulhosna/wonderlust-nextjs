@@ -1,8 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaStar, FaEdit } from "react-icons/fa";
 import { CiCalendarDate } from "react-icons/ci";
 import { MdOutlineAttachMoney } from "react-icons/md";
+import { EditModal, FormModal } from "@/components/EditModal";
+import { DeleteAlert } from "@/components/DeleteAlert";
+
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -19,115 +22,122 @@ const DestinationDetailsPage = async ({ params }) => {
     country,
     price,
     duration,
-    _id,
+    _id
   } = destination;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-200 py-10 px-4">
-      <div className="max-w-6xl mx-auto">
-        
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          
-          {/* Image */}
-          <div className="overflow-hidden rounded-3xl shadow-2xl group">
-            <Image
-              src={imageUrl}
-              alt={destinationName}
-              width={800}
-              height={600}
-              className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-white to-slate-100 pb-16">
+      {/* Overlay Buttons */}
 
-          {/* Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-5">
-              <FaStar />
+      {/* Top Image */}
+      <div className="relative w-full flex justify-center pt-8 px-4">
+        <div className="absolute top-5 right-10 z-20 flex items-center gap-3">
+  <EditModal destination={destination} />
+  <DeleteAlert destination={destination}/>
+</div>
+        <div className="relative w-full max-w-6xl h-[420px] md:h-[520px] rounded-[40px] overflow-hidden shadow-2xl">
+          
+          <Image
+            src={imageUrl}
+            alt={destinationName}
+            fill
+            priority
+            className="object-cover"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/30"></div>
+
+          
+
+          {/* Image Bottom Content */}
+          <div className="absolute bottom-8 left-6 md:left-10 text-white z-10">
+            
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium mb-4">
+              <FaStar className="text-yellow-400" />
               Premium Destination
             </div>
 
-            <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
               {destinationName}
             </h1>
 
-            {/* Country */}
-            <div className="flex items-center gap-3 mt-5 text-gray-600 text-lg">
-              <FaMapMarkerAlt className="text-red-500 text-2xl" />
+            <div className="flex items-center gap-3 mt-4 text-lg">
+              <FaMapMarkerAlt className="text-red-400 text-xl" />
               <span>{country}</span>
-            </div>
-
-            {/* Duration */}
-            <div className="flex items-center gap-3 mt-4 text-gray-600 text-lg">
-              <CiCalendarDate className="text-blue-500 text-2xl" />
-              <span>{duration} Days Tour</span>
-            </div>
-
-            {/* Price */}
-            <div className="flex items-center gap-3 mt-4 text-gray-600 text-lg">
-              <MdOutlineAttachMoney className="text-green-500 text-3xl" />
-              <span className="font-bold text-3xl text-gray-900">
-                ${price}
-              </span>
-            </div>
-
-            {/* Description */}
-            <p className="mt-6 text-gray-600 leading-8 text-lg">
-              Discover the beauty of{" "}
-              <span className="font-semibold text-gray-800">
-                {destinationName}
-              </span>
-              , one of the most breathtaking travel destinations in{" "}
-              {country}. Enjoy unforgettable experiences, amazing landscapes,
-              luxury accommodations, and exciting adventures during your{" "}
-              {duration}-day trip.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4 mt-8">
-              <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300">
-                Book Now
-              </button>
-
-              <button className="px-8 py-4 rounded-2xl border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-all duration-300">
-                Add Wishlist
-              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Extra Info Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+      {/* Information Section */}
+      <div className="max-w-5xl mx-auto px-5 mt-12">
+        
+        {/* Duration */}
+        <div className="flex items-center gap-5 border-b border-gray-200 py-8">
           
-          <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
-              Attractions
-            </h3>
-            <p className="text-gray-600 leading-7">
-              Explore beautiful landscapes, famous landmarks, beaches,
-              mountains, and cultural attractions.
-            </p>
+          <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
+            <CiCalendarDate className="text-4xl text-blue-600" />
           </div>
 
-          <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
-              Accommodation
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900">
+              Tour Duration
             </h3>
-            <p className="text-gray-600 leading-7">
-              Stay in premium hotels and resorts with modern facilities and
-              comfortable environments.
+
+            <p className="text-gray-600 mt-1 text-lg">
+              {duration} Days Trip
             </p>
+          </div>
+        </div>
+
+        {/* Price */}
+        <div className="flex items-center gap-5 border-b border-gray-200 py-8">
+          
+          <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center">
+            <MdOutlineAttachMoney className="text-4xl text-green-600" />
           </div>
 
-          <div className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">
-              Travel Tips
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900">
+              Package Price
             </h3>
-            <p className="text-gray-600 leading-7">
-              Best time to visit, local food recommendations, safety guidance,
-              and essential travel information.
+
+            <p className="text-3xl font-extrabold text-gray-900 mt-1">
+              ${price}
             </p>
           </div>
+        </div>
+
+        {/* About */}
+        <div className="py-10">
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            About Destination
+          </h2>
+
+          <p className="text-lg leading-9 text-gray-600">
+            Discover the beauty of{" "}
+            <span className="font-semibold text-gray-900">
+              {destinationName}
+            </span>
+            , one of the most breathtaking travel destinations in{" "}
+            {country}. Enjoy unforgettable experiences, luxury stays,
+            beautiful landscapes, local culture, delicious food, and exciting
+            adventures during your amazing {duration}-day journey.
+          </p>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-5 mt-4">
+          
+          <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300">
+            Book Now
+          </button>
+
+          <button className="px-8 py-4 rounded-2xl border-2 border-gray-300 text-gray-700 font-semibold hover:bg-gray-100 transition-all duration-300">
+            Add Wishlist
+          </button>
         </div>
       </div>
     </div>
