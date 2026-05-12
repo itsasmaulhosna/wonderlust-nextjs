@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
 
@@ -13,7 +12,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'media.sproutsocial.com',
       },
-
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
       {
         protocol: 'https',
         hostname: 'assets.example.com',
