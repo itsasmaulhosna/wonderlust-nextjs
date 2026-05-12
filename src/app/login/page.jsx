@@ -15,6 +15,7 @@ import {
 
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -38,6 +39,12 @@ const LoginPage = () => {
       alert(error.message);
     }
   };
+  const handleGoogleSignIn =async()=>{
+      await authClient.signIn.social({
+          provider:'google'
+      })
+    }
+  
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100 px-4">
@@ -112,6 +119,23 @@ const LoginPage = () => {
             Login
           </Button>
         </Form>
+        {/* OR Divider */}
+        <div className="flex items-center gap-4 my-6">
+          <div className="flex-1 h-px bg-gray-300" />
+          <span className="text-sm text-gray-500 whitespace-nowrap">
+            Or sign up with
+          </span>
+          <div className="flex-1 h-px bg-gray-300" />
+        </div>
+        
+        {/* Google Button */}
+        <Button onClick={handleGoogleSignIn}
+          variant="bordered"
+          className="w-full flex items-center justify-center gap-3 py-6 border-gray-300 hover:bg-gray-50 transition"
+        >
+          <FcGoogle className="text-xl" />
+          <span className="font-medium">Continue with Google</span>
+        </Button>
       </Card>
     </div>
   );
