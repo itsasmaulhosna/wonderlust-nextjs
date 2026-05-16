@@ -11,7 +11,7 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
 const DestinationDetailsPage = async ({ params }) => {
-  const { id } = await params;
+  const { id } =  params;
 
 const session = await auth.api.getToken({
   headers: await headers(),
