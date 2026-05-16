@@ -14,18 +14,27 @@ import {
 import { MdTravelExplore } from "react-icons/md";
 import { HiOutlineTicket } from "react-icons/hi";
 import { BookingCancel } from "@/components/BookingCancle";
+import { authClient } from "@/lib/auth-client";
 
 const MyBookingPage = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
+  
+  const {data:tokenData}=await authClient.token()
+          console.log(tokenData)
+const token =await auth.api.getToken({
+    headers:await headers()
+  })
+  console.log(token)
   const user = session?.user;
 
   const res = await fetch(
-    `http://localhost:5000/booking/${user?.id}`,
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${user?.id}`,
     {
-      cache: "no-store",
+      headers:{
+        authorization:`Bearer${token}`
+      }
     }
   );
 

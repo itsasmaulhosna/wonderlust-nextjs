@@ -7,16 +7,30 @@ import { MdOutlineAttachMoney } from "react-icons/md";
 import { EditModal } from "@/components/EditModal";
 import { DeleteAlert } from "@/components/DeleteAlert";
 import BookingCard from "@/components/BookingCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
+//   const token =await auth.api.getToken({
+//     headers:await headers()
+//   })
+// console.log("TOKEN:", token);
+const session = await auth.api.getToken({
+  headers: await headers(),
+});
 
-  const res = await fetch(`http://localhost:5000/destination/${id}`, {
+const realToken = session?.token;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${id}`, {
     cache: "no-store",
+    headers: {
+    authorization: `Bearer ${realToken}`,
+  },
+
   });
 
   const destination = await res.json();
-
+console.log("desinations are",destination)
   const {
     imageUrl,
     destinationName,
