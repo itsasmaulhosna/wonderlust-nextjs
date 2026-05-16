@@ -12,10 +12,7 @@ import { headers } from "next/headers";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
-//   const token =await auth.api.getToken({
-//     headers:await headers()
-//   })
-// console.log("TOKEN:", token);
+
 const session = await auth.api.getToken({
   headers: await headers(),
 });
