@@ -3,6 +3,7 @@ import DestinationCard from "@/components/DestinationCard";
 
 const DestinationPage =async () => {
     const res =await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`);
+    console.log(process.env.NEXT_PUBLIC_SERVER_URL);
     const destinations =await res.json()
     console.log(destinations);
     return (
