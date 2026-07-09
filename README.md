@@ -1,8 +1,8 @@
-# 🤖 AI Prompt Sharing & Marketplace Platform
+# 🌍 WonderLust – Destination Booking Platform
 
 ## 📖 Project Overview
 
-AI Prompt Sharing & Marketplace Platform is a modern full-stack web application built with Next.js that allows users to discover, create, bookmark, review, and manage AI prompts for tools like ChatGPT, Gemini, Claude, and Midjourney. The platform features secure authentication, premium subscriptions, role-based dashboards, and a responsive user experience.
+WonderLust is a modern destination booking platform designed to help users discover, explore, and book their favorite travel destinations. The application offers a responsive and user-friendly interface, secure authentication, destination search, and an easy booking experience, making travel planning simple and convenient.
 
 ---
 
@@ -14,23 +14,19 @@ AI Prompt Sharing & Marketplace Platform is a modern full-stack web application 
 
 ## 📷 Screenshot
 
-![AI Prompt Platform](./wonderlust.png)
+![Wonderlust](./wonderlust.png)
 
 ## ✨ Key Features
 
-- 🔐 Secure JWT Authentication
-- 🔑 Google Sign-in
-- 👥 Role-Based Dashboard (User, Creator & Admin)
-- ⭐ Featured & Trending Prompts
-- 🔍 Search, Filter & Sorting
-- 📋 Copy Prompt Functionality
-- 🔖 Bookmark System
-- ⭐ Review & Rating System
-- 🚩 Prompt Reporting
-- 💳 Stripe Premium Subscription
-- 📊 Analytics Dashboard
-- 📱 Fully Responsive Design
-- 🎨 Smooth Animations with Framer Motion
+- 🌍 Explore popular travel destinations
+- 🔍 Search and filter destinations
+- 📖 View detailed destination information
+- 🗓️ Book trips through a simple booking system
+- 🔐 Secure user authentication
+- ❤️ Save favorite destinations
+- 👤 User dashboard for managing bookings
+- 📱 Fully responsive design
+
 
 ---
 
@@ -83,13 +79,13 @@ AI Prompt Sharing & Marketplace Platform is a modern full-stack web application 
 ### Clone the repository
 
 ```bash
-git clone https://github.com/itsasmaulhosna/PromptVault-Client.git
+git clone https://github.com/itsasmaulhosna/Wonderlust-nextjs.git
 ```
 
 ### Navigate to the project
 
 ```bash
-cd PromptVault-Client
+cd Wonderlust-nextjs
 ```
 
 ### Install dependencies
