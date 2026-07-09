@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🤖 AI Prompt Sharing & Marketplace Platform
 
-## Getting Started
+## 📖 Project Overview
 
-First, run the development server:
+AI Prompt Sharing & Marketplace Platform is a modern full-stack web application built with Next.js that allows users to discover, create, bookmark, review, and manage AI prompts for tools like ChatGPT, Gemini, Claude, and Midjourney. The platform features secure authentication, premium subscriptions, role-based dashboards, and a responsive user experience.
+
+---
+
+## 🌐 Live Demo
+
+🔗  https://wonderlust-nextjs.vercel.app/
+
+---
+
+## 📷 Screenshot
+
+![AI Prompt Platform](./wonderlust.png)
+
+## ✨ Key Features
+
+- 🔐 Secure JWT Authentication
+- 🔑 Google Sign-in
+- 👥 Role-Based Dashboard (User, Creator & Admin)
+- ⭐ Featured & Trending Prompts
+- 🔍 Search, Filter & Sorting
+- 📋 Copy Prompt Functionality
+- 🔖 Bookmark System
+- ⭐ Review & Rating System
+- 🚩 Prompt Reporting
+- 💳 Stripe Premium Subscription
+- 📊 Analytics Dashboard
+- 📱 Fully Responsive Design
+- 🎨 Smooth Animations with Framer Motion
+
+---
+
+## 🛠 Technologies Used
+### Frontend
+
+- Next.js
+- React.js
+- Tailwind CSS
+- React Hook Form
+- TanStack React Query
+- Axios
+- Framer Motion
+- React Hot Toast
+- Recharts
+- Lucide React
+- React Icons
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Better Auth
+- JWT Authentication
+  
+### Deployment
+
+- Vercel
+- MongoDB Atlas
+
+## 📦 Dependencies
+
+- next
+- react
+- react-dom
+- axios
+- firebase
+- react-hook-form
+- @tanstack/react-query
+- react-hot-toast
+- framer-motion
+- recharts
+- lucide-react
+- react-icons
+- @stripe/stripe-js
+
+## ⚙️ Run Locally
+
+### Clone the repository
+
+```bash
+git clone https://github.com/itsasmaulhosna/PromptVault-Client.git
+```
+
+### Navigate to the project
+
+```bash
+cd PromptVault-Client
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+
+Create a `.env.local` file and add the following:
+```env
+BETTER_AUTH_SECRET=YOUR_BETTER_AUTH_SECRET
+BETTER_AUTH_URL=YOUR_APP_URL
+
+MONGO_DB_URI=YOUR_MONGODB_URI
+
+GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
+
+NEXT_PUBLIC_IMAGE_API=YOUR_IMAGE_API_KEY
+NEXT_PUBLIC_SERVER_URL=YOUR_BACKEND_SERVER_URL
+```
+
+### Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **http://localhost:3000** in your browser.
+## 📂 Project Structure
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+app/
+components/
+lib/
+public/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 Resources
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🌐 Live Site: https://wonderlust-nextjs.vercel.app/
+- 💻 Client Repository: https://github.com/itsasmaulhosna/wonderlust-nextjs
+- ⚙️ Server Repository:https://github.com/itsasmaulhosna/wonderlust-server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
